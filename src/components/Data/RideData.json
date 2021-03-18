@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "name": "Bus",
+      "image": "https://previews.123rf.com/images/leonido/leonido1105/leonido110500340/9551727-city-yellow-bus-tourist-coach-vector-illustration-for-designers.jpg"
+    },
+    {
+      "id":2,
+      "name": "Car",
+      "image": "https://i.dlpng.com/static/png/6432158_preview.png"
+    },
+    {
+      "id": 3,
+      "name": "Bike",
+      "image": "https://purepng.com/public/uploads/large/purepng.com-ktm-rc-390motorcyclemotorbikebikevehiclehondaktm-981525161914plvyv.png"
+    },
+    {
+      "id": 4,
+      "name": "Train",
+      "image": "https://pngimg.com/uploads/trian/trian_PNG16629.png"
+    }
+
+  
+  
+  ]
+  
