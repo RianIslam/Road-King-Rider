@@ -10,12 +10,16 @@ import {
 } from "react-router-dom";
 import Login from './components/Login/Login';
 import Destination from './components/Destination/Destination';
+import { createContext, useState } from 'react';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
+export const UserContext = createContext();
 
-function App() {
+function App(props) {
+  const [loggedInUser,setLoggedInUser] = useState({});
   return (
-    <div className="App">
-    
+    <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
+    <h3> email  :{loggedInUser.email}</h3>
     <Router>
     <Navbar/>
     <Switch>
@@ -33,7 +37,7 @@ function App() {
     </Router>
 
       
-    </div>
+    </UserContext.Provider>
   );
 }
 

@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from '../../FireBase.Config';
 import './Login.css';
-import userEvent from '@testing-library/user-event';
 import { FaGoogle } from "react-icons/fa";
+import { UserContext } from '../../App';
+import { useHistory, useLocation } from 'react-router-dom';
 
 
 firebase.initializeApp(firebaseConfig);
@@ -19,7 +20,13 @@ const Login = () => {
         email: '',
         password: '',
         photo: ''
-    })
+    });
+
+    const [loggedInUser,setLoggedInUser] = useContext(UserContext);
+    const history = useHistory();
+    const location = useLocation();
+    let { from } = location.state || { from: { pathname: "/" } };
+
 
     const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -106,6 +113,8 @@ const Login = () => {
                 newUserInfo.error = '';
                 newUserInfo.success = true;
                 setUser(newUserInfo);
+                setLoggedInUser(newUserInfo);
+                history.replace(from);
                 console.log('Sign in user info' ,res.user);
     
   })
@@ -137,19 +146,31 @@ const Login = () => {
     return (
         <div className="signInMathod">
         <h1>Our Own Authetication</h1>
-        <input type="checkbox" onChange={() => setNewuser(!newUser)} name="newUser" id=""/>
+        <div className="row">
+            <div className="col-md-4"></div>
+            <div className="col-md-4">
+            <div className="formDesign">
+            <h4>Create an account</h4>
+        <input type="checkbox" className="p-2" onChange={() => setNewuser(!newUser)} name="newUser" id=""/>
         <label htmlFor="newUser">New User Sign Up</label>
 
         <form action="" onSubmit={handleSubmit}>
         
             {newUser && <input type="text" name="name" onBlur={handleBlur} placeholder="Your Name"/>}
             <br/>
-            <input type="text" name="email" onBlur={handleBlur} placeholder="Your Email address" required/>
             <br/>
-            <input type="password" name="password" onBlur={handleBlur} placeholder="Your Password" required/>
+            <input style={{border: 'none',outline:'none', background:'none' }} type="text" className="p-2" name="email" onBlur={handleBlur} placeholder="Your Email address" required/>
             <br/>
-            <input type="submit" value={newUser ? 'Sign Up' : 'Sign In'} />
+            <br/>
+            <input style={{border: 'none',outline:'none', background:'none'}} type="password" className="p-2" name="password" onBlur={handleBlur} placeholder="Your Password" required/>
+            <br/>
+            <br/>
+            <input style={{border: 'none',outline:'none', background:'none'}} type="text" placeholder="Confirm Password"/>
+            <br/>
+            <br/>
+            <input className="signIn" type="submit" value={newUser ? 'Sign Up' : 'Sign In'} />
         </form>
+        
         <p style={{color: 'red'}}>{user.error}</p>
         {
             user.success && <p style={{color: 'green'}}>User {newUser ? 'Created' : 'Logged In'} Successfully</p>
@@ -158,10 +179,15 @@ const Login = () => {
 
 
             {
-                user.isSignedIn ? <button className="btn btn-outline-primary"onClick={handleSignOut}> <FaGoogle/> Google Sign-Out</button> :
-                <button className="btn btn-outline-primary p-3"onClick={handleSignIn}><FaGoogle/> Google Sign-In</button>
+                user.isSignedIn ? <button className="btn btn-outline-primary"onClick={handleSignOut}> <FaGoogle/>Sign Out from Google</button> :
+                <button className="btn btn-outline-primary p-3"onClick={handleSignIn}><FaGoogle/> Sign In With Google</button>
             }
-            {
+            </div>
+            </div>
+            <div className="col-md-4"></div>
+        </div>
+        
+            {/* {
                 
                 user.isSignedIn && 
                 <div>
@@ -169,7 +195,7 @@ const Login = () => {
                  <p>email {user.email}</p>
                 
                 </div>
-            }
+            } */}
         </div>
     )
 }

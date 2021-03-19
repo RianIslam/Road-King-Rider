@@ -1,4 +1,22 @@
 .signInMathod{
-    margin-top:80px;
+    margin-top:10%;
     text-align: center;
+}
+
+.formDesign{
+    border:1px solid #ddd;
+    padding: 30px;
+}
+/* .formDesign input{
+    border:none;
+    outline: none;
+    background:none;
+    border-bottom: 1px solid #ff5200;
+} */
+.signIn{
+    padding: 10px 70px;
+    background-color: #ff5200;
+    color:white;
+    border: none;
+    border-radius:5px;
 }
