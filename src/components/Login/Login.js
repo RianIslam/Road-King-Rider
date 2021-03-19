@@ -4,6 +4,7 @@ import "firebase/auth";
 import firebaseConfig from '../../FireBase.Config';
 import './Login.css';
 import userEvent from '@testing-library/user-event';
+import { FaGoogle } from "react-icons/fa";
 
 
 firebase.initializeApp(firebaseConfig);
@@ -157,8 +158,8 @@ const Login = () => {
 
 
             {
-                user.isSignedIn ? <button className="btn btn-outline-primary"onClick={handleSignOut}>Google Sign Out</button> :
-                <button className="btn btn-outline-primary"onClick={handleSignIn}>Google Sign In</button>
+                user.isSignedIn ? <button className="btn btn-outline-primary"onClick={handleSignOut}> <FaGoogle/> Google Sign-Out</button> :
+                <button className="btn btn-outline-primary p-3"onClick={handleSignIn}><FaGoogle/> Google Sign-In</button>
             }
             {
                 
