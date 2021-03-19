@@ -1,11 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link  } from 'react-router-dom'
 
 const Navbar = () => {
     return (
         <div className="container">
             <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-                <div className="container-fluid">
+                <div className="container">
                 
                     <a className="navbar-brand" to="/#"></a>
                     
@@ -16,16 +16,24 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item p-3">
-                                <a className="nav-link active" aria-current="page" to="/#">Home</a>
+                            
+                                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                                
                             </li>
                             <li className="nav-item p-3">
-                                <a className="nav-link active" aria-current="page" to="/#">Destination</a>
+                           
+                                <Link className="nav-link active" aria-current="page" to="/destination">Destination</Link>
+                                
                             </li>
                             <li className="nav-item p-3">
-                                <a className="nav-link active" aria-current="page" to="/#">Blog</a>
+                           
+                                <Link className="nav-link active" aria-current="page" to="/">Blog</Link>
+                                
                             </li>
                             <li className="nav-item p-3">
-                                <a className="nav-link active" aria-current="page" to="/#">Contact</a>
+                            
+                                <Link className="nav-link active" aria-current="page" to="/login">Contact</Link>
+                                
                             </li>
                             
                         </ul>

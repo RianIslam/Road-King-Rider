@@ -1,0 +1,22 @@
+.DestinationOne{
+    margin-top:5%;
+    border-top: 1px solid gray;
+}
+.Destination{
+    margin-top: 10%;
+}
+.map iframe{
+    width:600px;
+     height:450px;
+}
+.pickupbtn{
+    padding: 10px 94px;
+    border: none;
+    background-color : #ff5c20;
+    color:white;
+    border-radius:4px;
+
+}
+/* #from{
+    display:hide;
+} */

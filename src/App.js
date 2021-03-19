@@ -9,17 +9,21 @@ import {
   Link
 } from "react-router-dom";
 import Login from './components/Login/Login';
+import Destination from './components/Destination/Destination';
 
 
 function App() {
   return (
     <div className="App">
-    <Navbar/>
-    <Router>
     
+    <Router>
+    <Navbar/>
     <Switch>
       <Route exact path="/" >
       <Home/>
+      </Route>
+      <Route path="/destination">
+      <Destination/>
       </Route>
       <Route exact path="/login" >
       <Login/>

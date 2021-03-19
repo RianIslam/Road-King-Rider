@@ -147,7 +147,7 @@ const Login = () => {
             <br/>
             <input type="password" name="password" onBlur={handleBlur} placeholder="Your Password" required/>
             <br/>
-            <input type="submit" value="submit" />
+            <input type="submit" value={newUser ? 'Sign Up' : 'Sign In'} />
         </form>
         <p style={{color: 'red'}}>{user.error}</p>
         {
