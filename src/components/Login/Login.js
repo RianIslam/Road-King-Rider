@@ -54,11 +54,41 @@ const Login = () => {
           });
     }
 
+    const handleBlur = (e) => {
+        console.log(e.target.name,e.target.value);
+        if(e.target.name === 'email'){
+            const isEmailValid = /\S+@\S+\.\S+/.test(e.target.value);
+            console.log(isEmailValid);
+        }
+        if(e.target.name === 'password'){
+            const isPasswordValid = e.target.value.length > 6;
+            const passwordHasNumber = /\d{1}/.test(e.target.value);
+            console.log(passwordHasNumber && isPasswordValid);
+        }
+    }
+
+    const handleSubmit = () => {
+
+    }
+
+
     return (
         <div className="signInMathod">
+        <h1>Our Own Authetication</h1>
+
+        <form action="" onSubmit={handleSubmit}>
+            <input type="text" name="email" onBlur={handleBlur} placeholder="Your Email address" required/>
+            <br/>
+            <input type="password" name="password" onBlur={handleBlur} placeholder="Your Password" required/>
+            <br/>
+            <input type="submit" value="submit" />
+        </form>
+
+
+
             {
-                user.isSignedIn ? <button onClick={handleSignOut}>Sign Out</button> :
-                <button onClick={handleSignIn}>Sign In</button>
+                user.isSignedIn ? <button className="btn btn-outline-primary"onClick={handleSignOut}>Google Sign Out</button> :
+                <button className="btn btn-outline-primary"onClick={handleSignIn}>Google Sign In</button>
             }
             {
                 
