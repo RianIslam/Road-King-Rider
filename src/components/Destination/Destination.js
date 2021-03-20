@@ -2,6 +2,13 @@ import React from "react";
 import { useParams } from "react-router";
 import "./Destination.css";
 import fakeData from "../Data/RideData.json";
+import { FaUserAlt } from "react-icons/fa";
+
+
+
+
+
+
 const Destination = () => {
   const { rideName } = useParams();
 
@@ -42,7 +49,9 @@ const Destination = () => {
                     <div className="col mt-3">
                       <h4>{ride.name}</h4>
                     </div>
-                    <div className="col mt-3"></div>
+                    <div className="col mt-3">
+                    <FaUserAlt/>
+                    </div>
                     <div className="col mt-3">
                       <h5>$60</h5>
                     </div>
@@ -60,7 +69,9 @@ const Destination = () => {
                     <div className="col mt-3">
                       <h4>{ride.name}</h4>
                     </div>
-                    <div className="col mt-3"></div>
+                    <div className="col mt-3">
+                    <FaUserAlt/>
+                    </div>
                     <div className="col mt-3">
                       <h5>$60</h5>
                     </div>
@@ -78,7 +89,9 @@ const Destination = () => {
                     <div className="col mt-3">
                       <h4>{ride.name}</h4>
                     </div>
-                    <div className="col mt-3"></div>
+                    <div className="col mt-3">
+                    <FaUserAlt/>
+                    </div>
                     <div className="col mt-3">
                       <h5>$60</h5>
                     </div>
@@ -96,7 +109,9 @@ const Destination = () => {
                     <div className="col mt-3">
                       <h4>{ride.name}</h4>
                     </div>
-                    <div className="col mt-3"></div>
+                    <div className="col mt-3">
+                    <FaUserAlt/>
+                    </div>
                     <div className="col mt-3">
                       <h5>$60</h5>
                     </div>
