@@ -64,12 +64,6 @@ function App() {
 
 
 
-
-
-
-
-
-
     
     <Switch>
       <Route exact path="/" >
@@ -78,10 +72,14 @@ function App() {
       <Route exact path="/login" >
       <Login/>
       </Route>
-      <PrivateRoute exact path="/destination">
+      {/* <Route exact path="/destination">
+      <Destination/>
+      </Route> */}
+      <PrivateRoute exact path="/destinationride/:rideName">
       <Destination/>
       </PrivateRoute>
       
+    
     </Switch>
     
     </Router>
