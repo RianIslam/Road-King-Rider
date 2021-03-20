@@ -1,10 +1,9 @@
 import React from 'react'
 import searchData from '../Data/SearchData.json'
-import Destination from '../Destination/Destination';
 
 const SearchData = () => {
 
-    const [search, setSearch] = useState([]);
+    const [searchs, setSearch] = useState([]);
 
     useEffect(() => {
       setSearch(searchData);
@@ -15,10 +14,10 @@ const SearchData = () => {
         <div>
             {searchs.map((r) => (
             <Destination
-              rideName={r.name}
-              rideImg={r.image}
+              dataname={r.name}
               key={r.id}
             ></Destination>
+          ))}
         </div>
     )
 }

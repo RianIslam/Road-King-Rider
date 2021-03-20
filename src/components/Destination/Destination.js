@@ -1,9 +1,13 @@
 import React from 'react'
 import './Destination.css'
 
-const Destination = () => {
+const Destination = (props) => {
+    console.log(props.dataname)
+
     return (
-        <>
+        <div>
+                           
+        <h3>name :{props.dataname}</h3>
         <div className="container DestinationOne"></div>
         <div className="container Destination">
         
@@ -31,7 +35,7 @@ const Destination = () => {
            
             
         </div>
-        </>
+        </div>
     )
 }
 
