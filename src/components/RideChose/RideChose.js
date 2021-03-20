@@ -10,7 +10,7 @@ const handleDestination = () => {
 
   return (
 
-    <div className=" margin col-md-3 col-lg-3 col-sm-12 py-5 rounded">
+    <div className="  col-md-3 col-lg-3 col-sm-12 py-5 rounded margin">
       <div className="card py-5 "  style={{width:"250px" ,height:"300px"}}>
         <div className="card-body">
         <h3 onClick={handleDestination}  className="text-center p-3"> {props.rideName}</h3>

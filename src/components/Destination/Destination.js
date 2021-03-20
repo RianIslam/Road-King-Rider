@@ -2,12 +2,10 @@ import React from 'react'
 import './Destination.css'
 
 const Destination = (props) => {
-    console.log(props.dataname)
+    console.log(props)
 
     return (
-        <div>
-                           
-        <h3>name :{props.dataname}</h3>
+        <div >
         <div className="container DestinationOne"></div>
         <div className="container Destination">
         

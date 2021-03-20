@@ -146,15 +146,15 @@ const Login = () => {
     }
 
     return (
+
         <div className="signInMathod">
-        <h1>Our Own Authetication</h1>
         <div className="row">
             <div className="col-md-4"></div>
             <div className="col-md-4">
             <div className="formDesign shadow p-3 mb-5 bg-body rounded">
-            <h4>Create an account</h4>
+            <h2>Login</h2>
         <input  type="checkbox" className="p-2" onChange={() => setNewuser(!newUser)} name="newUser" id=""/>
-        <label htmlFor="newUser">New User Sign Up</label>
+        <label htmlFor="newUser"><h5>Create An Account</h5></label>
         <br/>
         <br/>
 
@@ -183,8 +183,8 @@ const Login = () => {
 
 
             {
-                user.isSignedIn ? <button className="btn btn-outline-primary"onClick={handleSignOut}> <FaGoogle/>Sign Out from Google</button> :
-                <button className="btn btn-outline-primary p-3"onClick={handleSignIn}><FaGoogle/> Sign In With Google</button>
+                user.isSignedIn ? <button className="btn btn-outline-primary" onClick={handleSignOut}> <FaGoogle/>Sign Out from Google</button> :
+                <button className="btn btn-outline-primary" onClick={handleSignIn}><FaGoogle/> Sign In With Google</button>
             }
             </div>
             </div>

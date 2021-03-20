@@ -27,7 +27,7 @@ function App() {
             <nav className="navbar navbar-expand-lg navbar-light fixed-top">
                 <div className="container">
                 
-                    <Link className="navbar-brand" to="/">Ride</Link>
+                    <Link className="navbar-brand" to="/"><h3>Rode King Riders</h3></Link>
                     
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +52,7 @@ function App() {
                             </li>
                             <li className="nav-item p-3">
                             
-                                <Link className="nav-link active" aria-current="page" to="/login"><button className="btn btn-danger">Login {(loggedInUser.email)}</button></Link>
+                                <Link className="nav-link active" aria-current="page" to="/login"><button className="btn btn-danger">Login with {(loggedInUser.email)}</button></Link>
                                 
                             </li>
                             

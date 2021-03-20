@@ -1,23 +1,46 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import searchData from '../Data/SearchData.json'
 
 const SearchData = () => {
 
-    const [searchs, setSearch] = useState([]);
+    // const [searchs, setSearch] = useState([]);
 
-    useEffect(() => {
-      setSearch(searchData);
-      console.log(searchData);
-    }, []);
+    // useEffect(() => {
+    //   setSearch(searchData);
+    //   console.log(searchData);
+    // }, []);
 
+
+ const data =  [
+        {
+          "id": 1,
+          "name": "Bus",
+          "image": "https://previews.123rf.com/images/leonido/leonido1105/leonido110500340/9551727-city-yellow-bus-tourist-coach-vector-illustration-for-designers.jpg"
+        },
+        {
+          "id":2,
+          "name": "Car",
+          "image": "https://imgd.aeplcdn.com/0x0/n/cw/ec/41375/x6-exterior-right-front-three-quarter-2.jpeg"
+        },
+        {
+          "id": 3,
+          "name": "Bike",
+          "image": "https://purepng.com/public/uploads/large/purepng.com-ktm-rc-390motorcyclemotorbikebikevehiclehondaktm-981525161914plvyv.png"
+        },
+        {
+          "id": 4,
+          "name": "Train",
+          "image": "https://pngimg.com/uploads/trian/trian_PNG16629.png"
+        }
+    
+      ]
+      
     return (
         <div>
-            {searchs.map((r) => (
-            <Destination
-              dataname={r.name}
-              key={r.id}
-            ></Destination>
-          ))}
+           {
+               data.map((one) => (<Destination datas={one}> </Destination>))
+               
+        }
         </div>
     )
 }

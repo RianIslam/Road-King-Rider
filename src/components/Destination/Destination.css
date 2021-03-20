@@ -1,9 +1,11 @@
 .DestinationOne{
     margin-top:5%;
     border-top: 1px solid gray;
+    
 }
 .Destination{
     margin-top: 10%;
+    
 }
 .map iframe{
     width:600px;
