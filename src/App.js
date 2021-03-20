@@ -15,7 +15,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 
-function App(props) {
+function App() {
   const [loggedInUser,setLoggedInUser] = useState({});
   return (
     <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
@@ -26,12 +26,13 @@ function App(props) {
       <Route exact path="/" >
       <Home/>
       </Route>
-      <Route path="/destination">
-      <Destination/>
-      </Route>
       <Route exact path="/login" >
       <Login/>
       </Route>
+      <PrivateRoute exact path="/destination">
+      <Destination/>
+      </PrivateRoute>
+      
     </Switch>
     
     </Router>

@@ -8,7 +8,7 @@ import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router-dom';
 
 
-firebase.initializeApp(firebaseConfig);
+    firebase.initializeApp(firebaseConfig);
 
 const Login = () => {
 
@@ -41,6 +41,8 @@ const Login = () => {
                 photo:photoURL
             }
             setUser(signedInUser);
+            setLoggedInUser(signedInUser);
+                history.replace(from);
             console.log(res);
         })
         .catch((err)=>{
@@ -149,14 +151,16 @@ const Login = () => {
         <div className="row">
             <div className="col-md-4"></div>
             <div className="col-md-4">
-            <div className="formDesign">
+            <div className="formDesign shadow p-3 mb-5 bg-body rounded">
             <h4>Create an account</h4>
-        <input type="checkbox" className="p-2" onChange={() => setNewuser(!newUser)} name="newUser" id=""/>
+        <input  type="checkbox" className="p-2" onChange={() => setNewuser(!newUser)} name="newUser" id=""/>
         <label htmlFor="newUser">New User Sign Up</label>
+        <br/>
+        <br/>
 
         <form action="" onSubmit={handleSubmit}>
         
-            {newUser && <input type="text" name="name" onBlur={handleBlur} placeholder="Your Name"/>}
+            {newUser && <input style={{border: 'none',outline:'none', background:'none' }} type="text" name="name" onBlur={handleBlur} placeholder="Your Name"/>}
             <br/>
             <br/>
             <input style={{border: 'none',outline:'none', background:'none' }} type="text" className="p-2" name="email" onBlur={handleBlur} placeholder="Your Email address" required/>
@@ -165,7 +169,7 @@ const Login = () => {
             <input style={{border: 'none',outline:'none', background:'none'}} type="password" className="p-2" name="password" onBlur={handleBlur} placeholder="Your Password" required/>
             <br/>
             <br/>
-            <input style={{border: 'none',outline:'none', background:'none'}} type="text" placeholder="Confirm Password"/>
+            <input style={{border: 'none',outline:'none', background:'none'}} type="password" name="password" placeholder="Confirm Password"/>
             <br/>
             <br/>
             <input className="signIn" type="submit" value={newUser ? 'Sign Up' : 'Sign In'} />
