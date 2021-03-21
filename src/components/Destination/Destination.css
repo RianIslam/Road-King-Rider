@@ -8,17 +8,18 @@
     
 }
 .map iframe{
-    width:600px;
-     height:450px;
+    width:700px;
+     height:600px;
 }
 .pickupbtn{
     padding: 10px 94px;
     border: none;
-    background-color : #ff5c20;
+    background-color : #ff5200;
     color:white;
     border-radius:4px;
 
 }
-/* #from{
-    display:hide;
-} */
+
+.location{
+    background-color:#ff5200;
+}

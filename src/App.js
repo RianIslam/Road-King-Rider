@@ -24,7 +24,7 @@ function App() {
 
 
     <div className="container">
-            <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+            <nav className="navbar navbar-expand-lg navbar-light ">
                 <div className="container">
                 
                     <Link className="navbar-brand" to="/"><h3>Rode King Riders</h3></Link>
@@ -42,7 +42,7 @@ function App() {
                             </li>
                             <li className="nav-item p-3">
                            
-                                <Link className="nav-link active" aria-current="page" to="/destination">Destination</Link>
+                                <Link className="nav-link active" aria-current="page" to="/login">Destination</Link>
                                 
                             </li>
                             <li className="nav-item p-3">
@@ -72,9 +72,7 @@ function App() {
       <Route exact path="/login" >
       <Login/>
       </Route>
-      {/* <Route exact path="/destination">
-      <Destination/>
-      </Route> */}
+      
       <PrivateRoute exact path="/destinationride/:rideName">
       <Destination/>
       </PrivateRoute>

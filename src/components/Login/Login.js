@@ -147,14 +147,14 @@ const Login = () => {
 
     return (
 
-        <div className="signInMathod">
+        <div className="container signInMathod">
         <div className="row">
             <div className="col-md-4"></div>
             <div className="col-md-4">
             <div className="formDesign shadow p-3 mb-5 bg-body rounded">
-            <h2>Login</h2>
+            <h2 className="py-3">Login Or Sign Up</h2>
         <input  type="checkbox" className="p-2" onChange={() => setNewuser(!newUser)} name="newUser" id=""/>
-        <label htmlFor="newUser"><h5>Create An Account</h5></label>
+        <label htmlFor="newUser"><h6>Create An Account</h6></label>
         <br/>
         <br/>
 
@@ -169,7 +169,7 @@ const Login = () => {
             <input style={{border: 'none',outline:'none', background:'none'}} type="password" className="p-2" name="password" onBlur={handleBlur} placeholder="Your Password" required/>
             <br/>
             <br/>
-            <input style={{border: 'none',outline:'none', background:'none'}} type="password" name="password" placeholder="Confirm Password"/>
+            <input style={{border: 'none',outline:'none', background:'none'}} type="password" name="password" placeholder="Confirm Password" required/>
             <br/>
             <br/>
             <input className="signIn" type="submit" value={newUser ? 'Sign Up' : 'Sign In'} />
